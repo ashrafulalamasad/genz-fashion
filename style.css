@@ -145,7 +145,7 @@ body {
 .banner-img {
   flex: 1;
   text-align: center;
-  margin-left: 50px;
+  margin-left: 180px;
 }
 
 .banner-img img {
@@ -168,8 +168,12 @@ body {
 }
 
 .btn {
-  display: inline-block;
-  padding: 18px 33px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 60px;
+  padding: 0 20px;
   border-radius: 10px;
   background: linear-gradient(180deg, #a4bc46 0%, #85a019 100%);
   color: #fff;
@@ -180,14 +184,54 @@ body {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   box-shadow: 0 2px 8px rgba(124, 181, 24, 0.08);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  line-height: 1;
 }
 
 .btn:hover {
-  background: #5a8e13;
+  background: linear-gradient(180deg, #5a8e13 0%, #4a7310 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 181, 24, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(124, 181, 24, 0.15);
+}
+
+.btn:focus {
+  outline: 2px solid #7cb518;
+  outline-offset: 2px;
+  box-shadow: 0 4px 12px rgba(124, 181, 24, 0.2);
+}
+
+.btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid #7cb518;
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn:disabled:hover {
+  background: #ccc;
+  transform: none;
 }
 
 .btn i {
   margin-right: 8px;
+  font-size: 14px;
+  pointer-events: none;
 }
 
 /* Main Content Sections */
@@ -268,8 +312,9 @@ body {
 }
 
 .footer-card .btn {
-  padding: 8px 20px;
+  padding: 12px 24px;
   font-size: 14px;
+  min-height: 44px;
 }
 
 /* Footer Service Section */
@@ -461,12 +506,39 @@ body {
   .category-title {
     font-size: 32px;
   }
+
+  .btn {
+    padding: 14px 28px;
+    font-size: 15px;
+    min-height: 50px;
+  }
+
+  .footer-card .btn {
+    padding: 12px 22px;
+    font-size: 14px;
+    min-height: 44px;
+  }
 }
 
 @media (max-width: 600px) {
   .footer-text-box {
     flex-direction: column;
     text-align: center;
+  }
+
+  .btn {
+    padding: 16px 32px;
+    font-size: 15px;
+    min-height: 52px;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .footer-card .btn {
+    padding: 14px 24px;
+    font-size: 14px;
+    min-height: 48px;
+    width: auto;
   }
 }
 
@@ -500,8 +572,15 @@ body {
   }
 
   .btn {
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 14px;
+    min-height: 48px;
+  }
+
+  .footer-card .btn {
+    padding: 10px 20px;
+    font-size: 13px;
+    min-height: 40px;
   }
 
   .banner-img img {
